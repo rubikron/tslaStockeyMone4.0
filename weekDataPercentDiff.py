@@ -22,3 +22,10 @@ def percentDif(datasetWithDateAndCategory,category):
 		percentDiffsList.append([(datasetWithDateAndCategory[category][x+1] - datasetWithDateAndCategory[category][x])/datasetWithDateAndCategory[category][x],datasetWithDateAndCategory['timestamp'][x],datasetWithDateAndCategory['timestamp'][x+1]])
 	return percentDiffsList
 
+def percentDifSimple(dataset):
+	lenOfDataset = len(dataset)
+	outputList = []
+	for r in range(lenOfDataset - 1):
+		outputList.append((dataset[r+1] - dataset[r])/dataset[r])
+	return outputList
+
